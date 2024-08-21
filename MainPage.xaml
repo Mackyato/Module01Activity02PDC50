@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Module01Activity02"
+             x:Class="Module01Activity02.MainPage"
+             BackgroundColor="{DynamicResource LocalBackgroundColor}">
+
+    <ContentPage.Resources>
+        <x:String x:Key="StaticUsername">Mark Anthony Soberano</x:String>
+        
+        <x:String x:Key="DynamicUsername">Angeles University Foundation</x:String>
+
+        <Color x:Key="DynamicBoxColor">Blue</Color>
+
+        <Color x:Key="LocalBackgroundColor">purple</Color>
+    
+    
+    </ContentPage.Resources>
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+
+
+            <Label Text="{Binding Firstname}" 
+                   TextColor="{Binding ColorRed}"/>
+
+            <Label x:Name="StaticResourceLabel" 
+                   Text="{StaticResource StaticUsername} "/>
+
+            <Button Text="Change Label Name - Static" 
+                    Clicked="OnChangedLabelName"/>
+
+            <!--Dynamic Binding Label-->
+            <Label x:Name="DynamicResourceLabel"
+                   Text="{DynamicResource DynamicUsername}"/>
+            
+            <!--button for changing label-->
+            <Button Text="Change Label Name - Dynamic" 
+                    Clicked="OnChangedLabelNameDynamic"/>
+
+            <Label Text="Changing Background Color"></Label>
+            <!--Button for changing the background color-->
+            <Button Text="Change Background Color"
+                    Clicked="OnChangedBackgroundColor"/>
+
+            <Button Text="Change Background Green"
+                Clicked="OnChangedBackgroundColorG"/>
+            
+            <Button Text="Change Background LightBlue"
+                Clicked="OnChangedBackgroundColorL"/>
+
+
+            <BoxView HeightRequest="100" 
+                     WidthRequest="100" 
+                     Color="{DynamicResource DynamicBoxColor}"/>
+
+            <Button Text="Change Box View Color"
+                    Clicked="OnChangedBoxViewColor"/>
+
+
+            <Label Text="{local:CurrentDateExtension}"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
