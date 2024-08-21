@@ -61,6 +61,12 @@
 
             <Label Text="{local:CurrentDateExtension}"/>
 
+            Entry x:Name="MyEntry"
+                   Placeholder="Type here........"
+                   Text="{Binding Text, Source{x:Reference MyEntry}}"/>
+
+            <Label Text="{Binding Source={x:Reference MyEntry}, Path=Text}"/>
+
         </VerticalStackLayout>
     </ScrollView>
 
